@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class MyRegister extends StatefulWidget {
 
 class _MyRegisterState extends State<MyRegister> {
   String _name = '', _email = '', _phoneNo = '', _password = '';
-  bool _isLoading = true;
+  // bool _isLoading = true;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -120,7 +119,7 @@ class _MyRegisterState extends State<MyRegister> {
                                     child: IconButton(
                                         color: Colors.white,
                                         onPressed: () {
-                                          signup();
+                                          Navigator.pushReplacementNamed(context, 'login');
                                         },
                                         icon: Icon(
                                           Icons.arrow_forward,
@@ -137,7 +136,7 @@ class _MyRegisterState extends State<MyRegister> {
                                 children: [
                                   TextButton(
                                     onPressed: () {
-                                      Navigator.pushNamed(context, 'login');
+                                      Navigator.pushReplacementNamed(context, 'login');
                                     },
                                     child: Text(
                                       'Way to SignIn',
@@ -166,42 +165,8 @@ class _MyRegisterState extends State<MyRegister> {
         ),
       ),
     );
-    ;
+
   }
 
-  void signup() async {
-    if (_name.isNotEmpty &&
-        _password.isNotEmpty &&
-        _email.isNotEmpty &&
-        _phoneNo.isNotEmpty) {
-      if (_isLoading) Navigator.pushNamed(context, 'loadingcircle');
-      http.Response response = await http.post(
-          Uri.parse('https://hackathon22.herokuapp.com/signup'),
-          body: <String, String>{
-            'name': _name,
-            'email': _email,
-            'phoneNo': _phoneNo,
-            'password': _password
-          });
-      setState(() {
-        _isLoading = false;
-      });
-      if (response.body == 'ok') {
-        //go to dashboard
-        Navigator.pushNamed(context, 'login');
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Something Went Wrong."),
-          ),
-        );
-      }
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Please Fill all the fields"),
-        ),
-      );
-    }
-  }
+
 }

@@ -1,18 +1,19 @@
-import 'dart:developer';
+
+import 'dart:html';
 
 import 'package:automobile_info/register.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
 
 class MyLogin extends StatefulWidget {
-  const MyLogin({Key? key}) : super(key: key);
+
 
   @override
   State<MyLogin> createState() => _MyLoginState();
 }
 
 class _MyLoginState extends State<MyLogin> {
-  bool _isLoading = true;
+ // bool _isLoading = true;
   String _email = '', _password = '';
   @override
   Widget build(BuildContext context) {
@@ -86,7 +87,7 @@ class _MyLoginState extends State<MyLogin> {
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {
-                                      signin();
+                                      Navigator.pushReplacementNamed(context, 'homeScreen');
                                     },
                                     icon: Icon(
                                       Icons.arrow_forward,
@@ -102,10 +103,10 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'homescreen');
+                                  Navigator.pushReplacementNamed(context, 'register');
                                 },
                                 child: Text(
-                                  'Back to Home',
+                                  'Back to Register',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: Color(0xff58bee6), fontSize: 13),
@@ -136,35 +137,5 @@ class _MyLoginState extends State<MyLogin> {
     );
   }
 
-  void signin() async {
-    if (_isLoading) Navigator.pushNamed(context, 'loadingcircle');
-    if (_email.isNotEmpty && _password.isNotEmpty) {
-      http.Response response = await http.post(
-          Uri.parse('https://hackathon22.herokuapp.com/signin'),
-          body: <String, String>{
-            'email': _email,
-            'password': _password,
-          });
-      setState(() {
-        _isLoading = false;
-      });
 
-      if (response.body == 'true') {
-        Navigator.pushNamedAndRemoveUntil(
-            context, 'homescreen', ModalRoute.withName('homescreen'));
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Email or Password error"),
-          ),
-        );
-      }
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Please Fill all the fields"),
-        ),
-      );
-    }
-  }
 }

@@ -1,19 +1,13 @@
-
-import 'dart:html';
-
 import 'package:automobile_info/register.dart';
 import 'package:flutter/material.dart';
 
-
 class MyLogin extends StatefulWidget {
-
-
   @override
   State<MyLogin> createState() => _MyLoginState();
 }
 
 class _MyLoginState extends State<MyLogin> {
- // bool _isLoading = true;
+  // bool _isLoading = true;
   String _email = '', _password = '';
   @override
   Widget build(BuildContext context) {
@@ -87,7 +81,8 @@ class _MyLoginState extends State<MyLogin> {
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {
-                                      Navigator.pushReplacementNamed(context, 'homeScreen');
+                                      Navigator.pushReplacementNamed(
+                                          context, 'homeScreen');
                                     },
                                     icon: Icon(
                                       Icons.arrow_forward,
@@ -103,7 +98,8 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, 'register');
+                                  Navigator.pushReplacementNamed(
+                                      context, 'register');
                                 },
                                 child: Text(
                                   'Back to Register',
@@ -136,6 +132,4 @@ class _MyLoginState extends State<MyLogin> {
       ),
     );
   }
-
-
 }

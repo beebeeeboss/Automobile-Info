@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'LeadingLayout.dart';
+
 
 class HomeScreen extends StatefulWidget {
 
@@ -20,7 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Automobile Info'),
+          leading: LeadingLayout(),
+          leadingWidth: double.maxFinite,
           actions: [
             Container(
               margin: EdgeInsets.only(right: 22.5),
@@ -70,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = index;
     });
   }
+
 }
 //list of layouts that contains in other files in future
   const List<Widget> _layoutList = [
@@ -79,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Icon(FontAwesomeIcons.car),
     Icon(FontAwesomeIcons.motorcycle),
   ];
+
 
 
 

@@ -1,16 +1,48 @@
+import 'dart:async';
+
+import 'package:automobile_info/register.dart';
 import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
+import 'login.dart';
 
 void main() {
-  runApp( MaterialApp(
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'homeScreen',
+    initialRoute: 'home',
     routes: {
-      'homeScreen' : (context) => HomeScreen(),
+      'home': (context) => MyHomePage(),
+      'login': (context) => MyLogin(),
+      'register': (context) => MyRegister(),
+      'homeScreen': (context) => HomeScreen(),
     },
+    home: MyHomePage(),
   ));
 }
 
+class MyHomePage extends StatefulWidget {
+  @override
+  SplashScreenState createState() => SplashScreenState();
+}
 
+class SplashScreenState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => MyRegister())));
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage('assets/images/s1.png'),
+        fit: BoxFit.cover,
+      ),
+    ));
+  }
+}

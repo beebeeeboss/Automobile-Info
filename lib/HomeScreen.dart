@@ -3,17 +3,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class HomeScreen extends StatefulWidget {
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  int _selectedIndex = 0;
-
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             Container(
               margin: EdgeInsets.only(right: 22.5),
-              child : Icon(FontAwesomeIcons.solidUserCircle),
+              child: Icon(FontAwesomeIcons.solidUserCircle),
             )
           ],
-
         ),
         body: Center(
-            child: _layoutList.elementAt(_selectedIndex),
+          child: _layoutList.elementAt(_selectedIndex),
         ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.lightBlue,
@@ -41,21 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.solidUser),
-                label: 'My Vehicles'
-            ),
+                icon: Icon(FontAwesomeIcons.solidUser), label: 'My Vehicles'),
             BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.solidCompass),
-                label: 'Services'
-            ),
+                icon: Icon(FontAwesomeIcons.solidCompass), label: 'Services'),
             BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.car),
-                label: 'Buy Cars'
-            ),
+                icon: Icon(FontAwesomeIcons.car), label: 'Buy Cars'),
             BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.motorcycle),
-                label: 'Bikes'
-            ),
+                icon: Icon(FontAwesomeIcons.motorcycle), label: 'Bikes'),
           ],
           currentIndex: _selectedIndex,
           onTap: _itemTapped,
@@ -71,19 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 }
+
 //list of layouts that contains in other files in future
-  const List<Widget> _layoutList = [
-    Icon(FontAwesomeIcons.home),
-    Icon(FontAwesomeIcons.solidUser),
-    Icon(FontAwesomeIcons.solidCompass),
-    Icon(FontAwesomeIcons.car),
-    Icon(FontAwesomeIcons.motorcycle),
-  ];
-
-
-
-
-
-
-
-
+const List<Widget> _layoutList = [
+  Icon(FontAwesomeIcons.home),
+  Icon(FontAwesomeIcons.solidUser),
+  Icon(FontAwesomeIcons.solidCompass),
+  Icon(FontAwesomeIcons.car),
+  Icon(FontAwesomeIcons.motorcycle),
+];

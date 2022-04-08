@@ -27,219 +27,287 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
-          child: Column(
-            children: <Widget>[
-              //Top Services
-              Card(
-                  child: Column(children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
+            child: Column(
+              children: <Widget>[
+                //Top Services
+                Card(
+                    child: Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Icon(Icons.search_rounded, color: Colors.green[500]),
+                          GestureDetector(
+                            child: const Text('Search Vehicle'),
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Icon(Icons.calculate_rounded,
+                              color: Colors.green[500]),
+                          GestureDetector(
+                            child: const Text('Car/Bike loan'),
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Icon(Icons.car_rental, color: Colors.green[500]),
+                          GestureDetector(
+                            child: const Text('Car Insurance'),
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Icon(Icons.bike_scooter_outlined,
+                              color: Colors.green[500]),
+                          GestureDetector(
+                            child: const Text('Bike Insurance'),
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Icon(Icons.document_scanner_outlined,
+                              color: Colors.green[500]),
+                          GestureDetector(
+                            child: const Text('Vehicle documents'),
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ])),
+                //Fuel Prices
+                Container(
+                    margin: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 0.0),
+                    child: Column(
                       children: [
-                        Icon(Icons.search_rounded, color: Colors.green[500]),
-                        const Text('Search Vehicle'),
+                        Row(
+                          children: [
+                            const Expanded(
+                              //06CDCDFF
+                              flex: 2,
+                              child: Icon(FontAwesomeIcons.gasPump,
+                                  color: Color.fromARGB(255, 28, 201, 201)),
+                            ),
+                            const Expanded(
+                              flex: 12,
+                              child: Text('  Current fuel prices in '),
+                            ),
+                            Expanded(
+                              flex: 6,
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                    primary: Colors.black,
+                                    backgroundColor: Colors.cyanAccent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    textStyle: const TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700,
+                                    )),
+                                child: Text("HARYANA"),
+                                onPressed: () {},
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: GestureDetector(
+                                child: Card(
+                                  child: Container(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'Petrol',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            backgroundColor:
+                                                Colors.cyanAccent[100],
+                                          ),
+                                        ),
+                                        Text(
+                                          'Rs 95.50',
+                                          style: TextStyle(fontSize: 24),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {},
+                              ),
+                            ),
+                            Expanded(
+                              child: GestureDetector(
+                                child: Card(
+                                  child: Container(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'Diesel',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            backgroundColor:
+                                                Colors.cyanAccent[100],
+                                          ),
+                                        ),
+                                        Text(
+                                          'Rs 86.75',
+                                          style: TextStyle(fontSize: 24),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.cyanAccent[700],
+                            backgroundColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                                side: BorderSide(
+                                    width: 1.0, color: Colors.cyanAccent)),
+                            textStyle: const TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 1.5),
+                            minimumSize: Size.fromHeight(32),
+                          ),
+                          child: Text("View trends"),
+                          onPressed: () {},
+                        ),
                       ],
-                    ),
-                    Column(
-                      children: [
-                        Icon(Icons.calculate_rounded, color: Colors.green[500]),
-                        const Text('Car/Bike loan'),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Icon(Icons.car_rental, color: Colors.green[500]),
-                        const Text('Car Insurance'),
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        Icon(Icons.bike_scooter_outlined,
-                            color: Colors.green[500]),
-                        const Text('Bike Insurance'),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Icon(Icons.document_scanner_outlined,
-                            color: Colors.green[500]),
-                        const Text('Vehicle documents'),
-                      ],
-                    ),
-                  ],
-                ),
-              ])),
-              //Fuel Prices
-              Container(
-                  margin: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 0.0),
+                    )),
+                Card(
                   child: Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Expanded(
-                            //06CDCDFF
-                            flex: 2,
-                            child: Icon(FontAwesomeIcons.gasPump,
-                                color: Color.fromARGB(255, 28, 201, 201)),
-                          ),
-                          const Expanded(
-                            flex: 12,
-                            child: Text('  Current fuel prices in '),
-                          ),
-                          Expanded(
-                            flex: 6,
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                  primary: Colors.black,
-                                  backgroundColor: Colors.cyanAccent,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  textStyle: const TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w700,
-                                  )),
-                              child: Text("HARYANA"),
-                              onPressed: () {},
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: const Text(
+                              'How tires affect your electric car performance',
+                              style: TextStyle(fontSize: 19),
                             ),
-                          )
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(18),
+                              child: Image.asset(
+                                'assets/images/yellow.jpg',
+                                height: 70,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
+                      Divider(
+                        height: 2,
+                        color: Colors.blueGrey,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Expanded(
-                            child: GestureDetector(
-                              child: Card(
-                                child: Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Petrol',
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          backgroundColor:
-                                              Colors.cyanAccent[100],
-                                        ),
-                                      ),
-                                      Text(
-                                        'Rs 95.50',
-                                        style: TextStyle(fontSize: 24),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              onTap: () {},
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: const Text(
+                              'Document checklist before buying a used car',
+                              style: TextStyle(fontSize: 19),
                             ),
                           ),
-                          Expanded(
-                            child: GestureDetector(
-                              child: Card(
-                                child: Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Diesel',
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          backgroundColor:
-                                              Colors.cyanAccent[100],
-                                        ),
-                                      ),
-                                      Text(
-                                        'Rs 86.75',
-                                        style: TextStyle(fontSize: 24),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(18),
+                              child: Image.asset(
+                                'assets/images/yellow.jpg',
+                                height: 70,
                               ),
-                              onTap: () {},
+                            ),
+                          ),
+                        ],
+                      ),
+                      Divider(
+                        height: 2,
+                        color: Colors.blueGrey,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: const Text(
+                              'How to scrap your car in India',
+                              style: TextStyle(fontSize: 19),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(18),
+                              child: Image.asset(
+                                'assets/images/yellow.jpg',
+                                height: 70,
+                              ),
                             ),
                           ),
                         ],
                       ),
                       TextButton(
                         style: TextButton.styleFrom(
-                          primary: Colors.cyanAccent[700],
-                          backgroundColor: Colors.transparent,
-                          shape: RoundedRectangleBorder(
+                            primary: Colors.black,
+                            backgroundColor: Colors.cyanAccent,
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
-                              side: BorderSide(
-                                  width: 1.0, color: Colors.cyanAccent)),
-                          textStyle: const TextStyle(
+                            ),
+                            textStyle: const TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w700,
-                              letterSpacing: 1.5),
-                          minimumSize: Size.fromHeight(32),
-                        ),
-                        child: Text("View trends"),
+                            )),
+                        child: Text("HARYANA"),
                         onPressed: () {},
                       ),
                     ],
-                  )),
-              Card(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            const Text(
-                                'How tires affect your electric car performance'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Image.asset('assets/images/yellow.jpg'),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            const Text(
-                                'Document checklist before buying a used car'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Image.asset('assets/images/yellow.jpg'),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            const Text('How to scrap your car in India'),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Image.asset('assets/images/yellow.jpg'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              )
-            ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
 import 'MyVehicles.dart';
 import 'login.dart';
+import 'Services.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,6 +18,7 @@ void main() {
       'register': (context) => MyRegister(),
       'homeScreen': (context) => HomeScreen(),
       'MyVehicle' : (context) => MyVehicles()
+      'services': (context) => Services()
     },
     // home: MyVehicles(),
   ));

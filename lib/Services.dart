@@ -419,7 +419,7 @@ class _ServicesState extends State<Services> {
                 ),
                 SizedBox(
                   height: 45,
-                ),
+                )
               ],
             ),
           ),

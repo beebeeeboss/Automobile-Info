@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Column(
                         children: [
                           Icon(Icons.calculate_rounded,
-                              color: Colors.green[500]),
+                              color: Colors.blue[500]),
                           GestureDetector(
                             child: const Text('Car/Bike loan'),
                             onTap: () {},
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Column(
                         children: [
-                          Icon(Icons.car_rental, color: Colors.green[500]),
+                          Icon(Icons.car_rental, color: Colors.blue[500]),
                           GestureDetector(
                             child: const Text('Car Insurance'),
                             onTap: () {},
@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Column(
                         children: [
                           Icon(Icons.bike_scooter_outlined,
-                              color: Colors.green[500]),
+                              color: Colors.blue[500]),
                           GestureDetector(
                             child: const Text('Bike Insurance'),
                             onTap: () {},
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Column(
                         children: [
                           Icon(Icons.document_scanner_outlined,
-                              color: Colors.green[500]),
+                              color: Colors.blue[500]),
                           GestureDetector(
                             child: const Text('Vehicle documents'),
                             onTap: () {},

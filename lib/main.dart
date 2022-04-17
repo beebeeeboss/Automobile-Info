@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
 import 'login.dart';
+import 'Services.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,6 +16,7 @@ void main() {
       'login': (context) => MyLogin(),
       'register': (context) => MyRegister(),
       'homeScreen': (context) => HomeScreen(),
+      'services': (context) => Services()
     },
     home: MyHomePage(),
   ));
@@ -31,7 +33,8 @@ class SplashScreenState extends State<MyHomePage> {
     super.initState();
     Timer(
         Duration(seconds: 3),
-        () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyRegister())));
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => MyRegister())));
   }
 
   @override

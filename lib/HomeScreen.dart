@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -206,6 +206,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     )),
+                //useful tips
+                SizedBox(height: 20,),
                 Card(
                   child: Column(
                     children: [
@@ -292,15 +294,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       TextButton(
                         style: TextButton.styleFrom(
                             primary: Colors.black,
-                            backgroundColor: Colors.cyanAccent,
+                            backgroundColor: Colors.cyanAccent[100],
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             textStyle: const TextStyle(
-                              fontSize: 11,
+                              fontSize: 14,
                               fontWeight: FontWeight.w700,
+                              letterSpacing: 3.4
                             )),
-                        child: Text("HARYANA"),
+                        child: Text("Show All"),
                         onPressed: () {},
                       ),
                     ],

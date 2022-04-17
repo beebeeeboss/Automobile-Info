@@ -4,6 +4,7 @@ import 'package:automobile_info/register.dart';
 import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
+import 'MyVehicles.dart';
 import 'login.dart';
 
 void main() {
@@ -15,8 +16,9 @@ void main() {
       'login': (context) => MyLogin(),
       'register': (context) => MyRegister(),
       'homeScreen': (context) => HomeScreen(),
+      'MyVehicle' : (context) => MyVehicles()
     },
-    home: MyHomePage(),
+    // home: MyVehicles(),
   ));
 }
 

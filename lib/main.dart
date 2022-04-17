@@ -17,7 +17,7 @@ void main() {
       'login': (context) => MyLogin(),
       'register': (context) => MyRegister(),
       'homeScreen': (context) => HomeScreen(),
-      'MyVehicle' : (context) => MyVehicles()
+      'MyVehicle' : (context) => MyVehicles(),
       'services': (context) => Services()
     },
     // home: MyVehicles(),

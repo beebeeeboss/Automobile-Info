@@ -20,7 +20,7 @@ class _ServicesState extends State<Services> {
         leadingWidth: double.maxFinite,
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 22.5),
+            margin: EdgeInsets.only(right: 21.5),
             child: Icon(FontAwesomeIcons.gift),
           )
         ],
